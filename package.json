@@ -1,0 +1,12 @@
+{
+  "name": "visionary-assist",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Personal Chrome extension for work form accessibility",
+  "scripts": {
+    "test:serve": "npx --yes serve test -p 5173"
+  },
+  "dependencies": {
+    "chrome-types": "^0.1.154"
+  }
+}

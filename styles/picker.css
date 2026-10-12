@@ -1,0 +1,240 @@
+#fva-picker-root {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483646;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+#fva-picker-root[hidden] {
+  display: none;
+}
+
+.fva-picker-backdrop {
+  position: absolute;
+  inset: 0;
+}
+
+.fva-picker-panel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(640px, 92vw);
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.fva-picker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.fva-picker-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.fva-picker-close {
+  border: none;
+  background: transparent;
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+.fva-picker-search {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid;
+  border-radius: 8px;
+  font-size: 1.125rem;
+  box-sizing: border-box;
+}
+
+.fva-picker-search:focus {
+  outline: 2px solid #4a8fd4;
+  outline-offset: 1px;
+}
+
+.fva-picker-error {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.fva-picker-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  max-height: 50vh;
+}
+
+.fva-picker-option {
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 1.125rem;
+  cursor: pointer;
+}
+
+/* ── Dark picker: custom theme or dark theme off ── */
+
+#fva-picker-root.fva-picker-dark {
+  color-scheme: dark;
+}
+
+#fva-picker-root.fva-picker-dark .fva-picker-backdrop {
+  background: rgba(0, 0, 0, 0.72);
+}
+
+#fva-picker-root.fva-picker-dark .fva-picker-panel {
+  background: #1a1a1a;
+  color: #ececec;
+  border: 1px solid #3a3a3a;
+  box-shadow: 0 20px 56px rgba(0, 0, 0, 0.65);
+}
+
+#fva-picker-root.fva-picker-dark .fva-picker-title {
+  color: #f0f0f0;
+}
+
+#fva-picker-root.fva-picker-dark .fva-picker-close {
+  color: #cccccc;
+}
+
+#fva-picker-root.fva-picker-dark .fva-picker-search {
+  background: #0f0f0f;
+  color: #f0f0f0;
+  border-color: #4a4a4a;
+}
+
+#fva-picker-root.fva-picker-dark .fva-picker-search::placeholder {
+  color: #888888;
+}
+
+#fva-picker-root.fva-picker-dark .fva-picker-error {
+  color: #ffd4d4;
+  background: #4a1f1f;
+  border: 1px solid #8b3a3a;
+}
+
+#fva-picker-root.fva-picker-dark .fva-picker-list {
+  background: #1a1a1a;
+}
+
+#fva-picker-root.fva-picker-dark .fva-picker-option {
+  color: #e8e8e8;
+  background: #1a1a1a;
+}
+
+#fva-picker-root.fva-picker-dark .fva-picker-option:hover,
+#fva-picker-root.fva-picker-dark .fva-picker-option.is-active {
+  background: #2a5a9e;
+  color: #ffffff;
+}
+
+/*
+ * Invert-compensated colors for when the page uses the invert filter.
+ * The page inverts everything inside <html>, so we set the opposite
+ * colors here so the picker *displays* as dark after inversion.
+ */
+html.fva-dark-theme:not(.fva-theme-custom) #fva-picker-root.fva-picker-dark .fva-picker-backdrop {
+  background: rgba(255, 255, 255, 0.72);
+}
+
+html.fva-dark-theme:not(.fva-theme-custom) #fva-picker-root.fva-picker-dark .fva-picker-panel {
+  background: #e5e5e5;
+  color: #131313;
+  border-color: #c5c5c5;
+  box-shadow: 0 20px 56px rgba(255, 255, 255, 0.65);
+}
+
+html.fva-dark-theme:not(.fva-theme-custom) #fva-picker-root.fva-picker-dark .fva-picker-title {
+  color: #0f0f0f;
+}
+
+html.fva-dark-theme:not(.fva-theme-custom) #fva-picker-root.fva-picker-dark .fva-picker-close {
+  color: #333333;
+}
+
+html.fva-dark-theme:not(.fva-theme-custom) #fva-picker-root.fva-picker-dark .fva-picker-search {
+  background: #f0f0f0;
+  color: #0f0f0f;
+  border-color: #b5b5b5;
+}
+
+html.fva-dark-theme:not(.fva-theme-custom) #fva-picker-root.fva-picker-dark .fva-picker-search::placeholder {
+  color: #777777;
+}
+
+html.fva-dark-theme:not(.fva-theme-custom) #fva-picker-root.fva-picker-dark .fva-picker-error {
+  color: #5c1010;
+  background: #f8d7d7;
+  border-color: #c96a6a;
+}
+
+html.fva-dark-theme:not(.fva-theme-custom) #fva-picker-root.fva-picker-dark .fva-picker-list {
+  background: #e5e5e5;
+}
+
+html.fva-dark-theme:not(.fva-theme-custom) #fva-picker-root.fva-picker-dark .fva-picker-option {
+  color: #171717;
+  background: #e5e5e5;
+}
+
+html.fva-dark-theme:not(.fva-theme-custom) #fva-picker-root.fva-picker-dark .fva-picker-option:hover,
+html.fva-dark-theme:not(.fva-theme-custom) #fva-picker-root.fva-picker-dark .fva-picker-option.is-active {
+  background: #d5a561;
+  color: #000000;
+}
+
+/* ── Light picker (dark theme off) ── */
+
+#fva-picker-root.fva-picker-light {
+  color-scheme: light;
+}
+
+#fva-picker-root.fva-picker-light .fva-picker-backdrop {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+#fva-picker-root.fva-picker-light .fva-picker-panel {
+  background: #ffffff;
+  color: #1a1a1a;
+  border: 1px solid #cccccc;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
+}
+
+#fva-picker-root.fva-picker-light .fva-picker-search {
+  background: #f8f8f8;
+  color: #1a1a1a;
+  border-color: #bbbbbb;
+}
+
+#fva-picker-root.fva-picker-light .fva-picker-error {
+  color: #5c1010;
+  background: #f8d7d7;
+  border: 1px solid #c96a6a;
+}
+
+#fva-picker-root.fva-picker-light .fva-picker-option {
+  color: #1a1a1a;
+  background: #ffffff;
+}
+
+#fva-picker-root.fva-picker-light .fva-picker-option:hover,
+#fva-picker-root.fva-picker-light .fva-picker-option.is-active {
+  background: #2a5a9e;
+  color: #ffffff;
+}

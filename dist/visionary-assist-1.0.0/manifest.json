@@ -1,0 +1,52 @@
+{
+  "manifest_version": 3,
+  "name": "Visionary Assist",
+  "description": "Personal accessibility helper for work forms — dark theme, fill indicators, and searchable dropdown picker.",
+  "version": "1.0.0",
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Visionary Assist"
+  },
+  "options_page": "options/options.html",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content/content.js"],
+      "css": ["styles/form-tracker.css", "styles/theme.css", "styles/picker.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "commands": {
+    "toggle-theme": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+D",
+        "mac": "Command+Shift+D"
+      },
+      "description": "Toggle dark theme on the current page"
+    },
+    "toggle-picker": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "Command+Shift+F"
+      },
+      "description": "Open dropdown picker for the focused field"
+    }
+  },
+  "icons": {
+    "20": "assets/logo-20.png",
+    "48": "assets/logo-48.png",
+    "128": "assets/logo-128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["styles/picker.css"],
+      "matches": ["http://*/*", "https://*/*"]
+    }
+  ]
+}

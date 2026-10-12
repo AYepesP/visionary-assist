@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visionary Assist — Test Page</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        background: #f4f4f4;
+        color: #222;
+      }
+
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 32px 20px 64px;
+      }
+
+      h1 {
+        margin-top: 0;
+      }
+
+      fieldset {
+        margin-bottom: 20px;
+        padding: 16px;
+        border: 1px solid #bbb;
+        background: #fff;
+      }
+
+      legend {
+        font-weight: bold;
+        padding: 0 6px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 12px;
+      }
+
+      input,
+      textarea,
+      select {
+        display: block;
+        width: 100%;
+        margin-top: 4px;
+        padding: 8px;
+        font-size: 16px;
+        box-sizing: border-box;
+      }
+
+      .hint {
+        margin-top: 24px;
+        padding: 12px;
+        background: #fff8d6;
+        border: 1px solid #e2c766;
+      }
+
+      code {
+        font-family: Consolas, monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Employee Intake Form (Test)</h1>
+      <p>
+        Use this page to test Visionary Assist. Open via
+        <code>http://localhost:5173/test-page.html</code> after running
+        <code>npm run test:serve</code>.
+      </p>
+
+      <form>
+        <fieldset>
+          <legend>Personal details</legend>
+
+          <label>
+            Full name
+            <input type="text" name="fullName" placeholder="Jane Doe" />
+          </label>
+
+          <label>
+            Employee ID
+            <input type="text" name="employeeId" placeholder="EMP-1042" />
+          </label>
+
+          <label>
+            Department
+            <select name="department">
+              <option value="">Select a department</option>
+              <option value="hr">Human Resources</option>
+              <option value="finance">Finance</option>
+              <option value="engineering">Engineering</option>
+              <option value="operations">Operations</option>
+              <option value="legal">Legal</option>
+            </select>
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Request details</legend>
+
+          <label>
+            Request type
+            <select name="requestType">
+              <option value="">Select request type</option>
+              <option value="leave">Leave request</option>
+              <option value="equipment">Equipment request</option>
+              <option value="access">Access change</option>
+              <option value="travel">Travel approval</option>
+              <option value="training">Training enrollment</option>
+            </select>
+          </label>
+
+          <label>
+            Priority
+            <select name="priority">
+              <option value="">Select priority</option>
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+              <option value="urgent">Urgent</option>
+            </select>
+          </label>
+
+          <label>
+            Notes
+            <textarea name="notes" rows="4" placeholder="Additional context"></textarea>
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Location</legend>
+
+          <label>
+            Office
+            <select name="office">
+              <option value="">Select office</option>
+              <option value="nyc">New York</option>
+              <option value="chi">Chicago</option>
+              <option value="dal">Dallas</option>
+              <option value="la">Los Angeles</option>
+              <option value="remote">Remote</option>
+            </select>
+          </label>
+        </fieldset>
+      </form>
+
+      <div class="hint">
+        <strong>What to verify</strong>
+        <ul>
+          <li>Green badge bottom-right: “Visionary Assist active”</li>
+          <li>Page inverts to dark theme (if enabled in popup)</li>
+          <li>Filled fields get a gray background + green outline</li>
+          <li>Clicking a dropdown opens the searchable picker overlay</li>
+          <li><code>Ctrl+Shift+D</code> toggles theme on this tab only</li>
+          <li><code>Ctrl+Shift+F</code> opens picker on focused dropdown</li>
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>

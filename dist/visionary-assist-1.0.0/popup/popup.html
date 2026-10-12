@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visionary Assist</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main>
+      <header class="header">
+        <h1>Visionary Assist</h1>
+        <span id="status-pill" class="pill pill-idle">—</span>
+      </header>
+
+      <section class="card" id="site-card">
+        <p class="label">Current site</p>
+        <p class="hostname" id="current-host">—</p>
+        <p id="connection-status" class="hint"></p>
+        <button type="button" id="addHost" class="btn btn-primary" hidden>
+          Add this site to allowed hosts
+        </button>
+      </section>
+
+      <section class="card">
+        <p class="section-title">Features</p>
+        <label class="toggle">
+          <span>Dark theme</span>
+          <input type="checkbox" id="darkTheme" />
+          <span class="track" aria-hidden="true"></span>
+        </label>
+        <label class="toggle">
+          <span>Fill indicators</span>
+          <input type="checkbox" id="fillIndicators" />
+          <span class="track" aria-hidden="true"></span>
+        </label>
+        <label class="toggle">
+          <span>Dropdown picker</span>
+          <input type="checkbox" id="dropdownPicker" />
+          <span class="track" aria-hidden="true"></span>
+        </label>
+      </section>
+
+      <button type="button" id="openOptions" class="btn btn-ghost">Open settings</button>
+      <p id="toast" class="toast" role="status" aria-live="polite"></p>
+    </main>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

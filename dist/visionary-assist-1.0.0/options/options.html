@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visionary Assist — Settings</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main>
+      <header class="page-header">
+        <h1>Visionary Assist</h1>
+        <p class="subtitle">Personal settings for work form accessibility.</p>
+      </header>
+
+      <section class="panel">
+        <h2>Where it runs</h2>
+        <p class="help">
+          List the <strong>hostnames</strong> where the extension should run — not full URLs.
+          For <code>https://forms.mycompany.com/intake</code> enter <code>forms.mycompany.com</code>.
+        </p>
+        <label class="toggle">
+          <span>Extension enabled</span>
+          <input type="checkbox" id="enabled" />
+          <span class="track" aria-hidden="true"></span>
+        </label>
+        <label class="field">
+          <span class="field-label">Allowed hosts</span>
+          <span class="field-hint">One hostname per line</span>
+          <textarea id="allowedHosts" rows="4" placeholder="forms.mycompany.com&#10;localhost"></textarea>
+        </label>
+        <label class="toggle">
+          <span>Dev mode <span class="tag">testing</span></span>
+          <input type="checkbox" id="devMode" />
+          <span class="track" aria-hidden="true"></span>
+        </label>
+        <p class="help warn">
+          Dev mode runs on every site and ignores the list above. Turn it off once your work hostname is added.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>Features</h2>
+        <label class="toggle">
+          <span>Dark theme</span>
+          <input type="checkbox" id="darkTheme" />
+          <span class="track" aria-hidden="true"></span>
+        </label>
+        <label class="toggle">
+          <span>Filled-field indicators</span>
+          <input type="checkbox" id="fillIndicators" />
+          <span class="track" aria-hidden="true"></span>
+        </label>
+        <label class="toggle">
+          <span>Dropdown picker</span>
+          <input type="checkbox" id="dropdownPicker" />
+          <span class="track" aria-hidden="true"></span>
+        </label>
+      </section>
+
+      <section class="panel">
+        <h2>Appearance</h2>
+        <label class="field">
+          <span class="field-label">Theme mode</span>
+          <select id="themeMode">
+            <option value="invert">Invert (quick default)</option>
+            <option value="custom">Custom dark palette</option>
+          </select>
+        </label>
+        <div class="field-row">
+          <label class="field">
+            <span class="field-label">Fill background</span>
+            <input type="text" id="fillBackground" />
+          </label>
+          <label class="field">
+            <span class="field-label">Fill border</span>
+            <input type="text" id="fillBorder" />
+          </label>
+        </div>
+      </section>
+
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </main>
+    <script type="module" src="options.js"></script>
+  </body>
+</html>

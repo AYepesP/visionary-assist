@@ -1,0 +1,30 @@
+html.fva-dark-theme {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+html.fva-dark-theme img,
+html.fva-dark-theme video,
+html.fva-dark-theme picture,
+html.fva-dark-theme svg image {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+html.fva-dark-theme.fva-theme-custom {
+  filter: none;
+}
+
+html.fva-dark-theme.fva-theme-custom,
+html.fva-dark-theme.fva-theme-custom body {
+  color-scheme: dark;
+  background-color: #1a1a1a !important;
+  color: #e8e8e8 !important;
+}
+
+html.fva-dark-theme.fva-theme-custom input,
+html.fva-dark-theme.fva-theme-custom textarea,
+html.fva-dark-theme.fva-theme-custom select,
+html.fva-dark-theme.fva-theme-custom button {
+  background-color: #2a2a2a !important;
+  color: #f0f0f0 !important;
+  border-color: #555 !important;
+}

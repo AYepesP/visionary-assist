@@ -1,0 +1,27 @@
+.fva-filled {
+  background-color: var(--fva-fill-bg, #b8c0c8) !important;
+  outline: 2px solid var(--fva-fill-border, #6b9e6b) !important;
+  outline-offset: 1px;
+}
+
+/* Visual confirmation after the picker sets a native <select> */
+select.fva-picker-applied {
+  box-shadow: 0 0 0 2px var(--fva-picker-confirm, #3d8bfd) !important;
+}
+
+select.fva-picker-applied.fva-picker-applied-pulse {
+  animation: fva-picker-confirm-pulse 0.7s ease;
+}
+
+@keyframes fva-picker-confirm-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 2px var(--fva-picker-confirm, #3d8bfd);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 4px var(--fva-picker-confirm, #3d8bfd),
+      0 0 10px rgba(61, 139, 253, 0.45);
+  }
+}
